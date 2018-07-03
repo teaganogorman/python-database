@@ -1,4 +1,4 @@
-# python-database
+# python-mysql
 Workings on pushing data from Excel/CSVs to a database using Python
 Opens and manipulates files and then sends them to a mysql database
 Currently working for pnpc, parmalat, weather_sa and pvspot
