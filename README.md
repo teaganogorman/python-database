@@ -9,4 +9,6 @@ Database info must be on line 142, in the format below:
 engine = create_engine('dialect+driver://username:password@host:port/database', echo=False)
 (currently engine = create_engine('mysql+pymysql://root:ep101@localhost/ei_db', echo=False))
 
-PNG files in this repository show how the database and its tables need to be set up beforehand
+The majority of the code in this script deals with importing the files and manipulating them into the correct formats to send to the DB.
+
+PNG files in this repository show how the database and its tables need to be set up beforehand.
