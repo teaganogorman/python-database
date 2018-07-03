@@ -3,6 +3,8 @@ Workings on pushing data from Excel/CSVs to a database using Python
 Opens and manipulates files and then sends them to a mysql database
 Currently working for pnpc, parmalat, weather_sa and pvspot
 
+Required modules (must be installed on computer): sqlalchemy, pymysql, pandas
+
 Files to upload must be in the directory specified on line 127 (currently dirname='C:/push_to_db/')
 
 Database info must be on line 142, in the format below:
