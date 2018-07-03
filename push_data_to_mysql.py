@@ -209,15 +209,18 @@ for item in os.listdir(dirname):
     #only if there was at least one relevant file found
     if found==True:
         final_frame=data_frame
-        
+
+        #loop through the rows of the data frame and attempt to send them to the db        
         for row in range(final_frame.shape[0]):
             try:
                 current_row=final_frame[row:row+1]
                 current_row.to_sql(name=table, con = engine, index=True, if_exists='append') 
                 success+=1
+                #"progress bar"
                 sys.stdout.write("\r" + str(success) + " records uploaded so far.")
             except Exception as e:
                 if "Duplicate entry" in str(e):
+                    #if there is a duplicate entry, say so with another progress counter 
                     fail+=1
                     sys.stdout.write("\r" + str(fail) + " duplicate records ignored.")
                 else:
@@ -225,21 +228,13 @@ for item in os.listdir(dirname):
             finally:
                 pass
         
+        #finish by displaying how many records were uploaded in total
         print("\n" + str(success) + ' records uploaded for ' + str(table) +'.')
         
     #delete the file from the folder
 #    os.remove(item)        
             
-
-            
-            
-    
+#close database connection and notify user that the programme is finished
 connection.close()
-
 print("\nClosed and finished.")
-
-
-    
-    
-    
     
